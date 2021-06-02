@@ -1,6 +1,29 @@
-const express = require("express");
-var router = express.Router();
+const config = require("../config/keys");
+const awsci = require("amazon-cognito-identity-js");
 
+// AWS Cognito endpoint
 module.exports = (req, res) => {
-    res.status(200).json({hello: "hi"});
+    const email = req.body.email;
+    const password = req.body.password;
+    const confirmPassword = req.body.confirmPassword;
+
+    if (password !== confirmPassword)
+    {
+        res.redirect("/register?error=passwordsDoNotMatch");
+    }
+
+    const userPool = new awsci.CognitoUserPool(config.poolData);
+    const emailData = {
+        Name: 'email',
+        Value: email
+    };
+
+    const emailAtrribute = new awsci.CognitoUserAttribute(emailData);
+    userPool.signUp(email, password, [ emailAtrribute ], null, (err, data) => {
+        if (err) {
+            return console.error(err);
+        }
+
+        res.send(data.user);
+    });
 };

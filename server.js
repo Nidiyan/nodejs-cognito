@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const ejs = require("ejs");
 const cors = require("cors");
+const config = require("./config/keys");
 
 const app = express();
 
@@ -8,6 +10,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
+app.set('view engine', 'ejs');
 
 // Headers
 app.use((req, res, next) => {
