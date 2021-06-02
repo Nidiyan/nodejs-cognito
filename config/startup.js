@@ -6,11 +6,10 @@ var register = require("../routes/register");
 var signup = require("../routes/signup");
 
 router.get("/", (req, res) => {
-    res.redirect("/login");
+    res.render("index", {});
 });
 
-router.get("/login", login);
-router.get("/register", register);
-router.post("/signup", signup);
+router.use("/login", login);
+router.use("/register", register);
 
 module.exports = router;
