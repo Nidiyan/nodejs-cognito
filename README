@@ -1,9 +1,0 @@
-# Topic Talk
-
-Using AWS Cognito for User Sign-in/Sign-up as well as Authentication
-
-##### NOTE: Create config/keys.js with AWS Cognito credentials
-#######    poolData: {
-#######        UserPoolId: "us-east-1",
-#######        ClientId: "...",
-#######    }
