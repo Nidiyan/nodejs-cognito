@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 // POST /login
 // logs the user in
 router.post("/", (req, res) => {
-    res.send("hi");
+    res.json({status: "Page Under Construction"});
 });
 
 module.exports = router;
