@@ -1,5 +1,6 @@
 const express = require("express");
 const awsci = require("amazon-cognito-identity-js");
+const config = require("../config/keys");
 var router = express.Router();
 
 // GET /register
@@ -30,7 +31,7 @@ router.post("/", (req, res) => {
     
     userPool.signUp(email, password, [ emailAtrribute ], null, (err, data) => {
         if (err) {
-            return console.error(err);
+            res.send(err);
         }
 
         res.send(data.user);
