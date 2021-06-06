@@ -13,4 +13,4 @@ export NVM_DIR="$HOME/.nvm"
 # Install required packages
 npm install
 
-node server.js > app.out.log 2> app.err.log < /dev/null &
+node server.js > logs/app.out.log 2> logs/app.err.log < /dev/null &
