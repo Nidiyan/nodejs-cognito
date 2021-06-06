@@ -1,4 +1,5 @@
 const express = require("express");
+const awsci = require("amazon-cognito-identity-js");
 var router = express.Router();
 
 // GET /register
@@ -8,7 +9,6 @@ router.get("/", (req, res) => {
 
 // POST /register
 router.post("/", (req, res) => {
-    const awsci = require("amazon-cognito-idenity-js");
     const email = req.body.email;
     const password = req.body.password;
     const confirmPassword = req.body.confirmPassword;
