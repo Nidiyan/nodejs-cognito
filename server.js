@@ -29,5 +29,5 @@ app.use(require("./config/startup"));
 port = process.env.NODE_ENV || 8000;
 
 app.listen(port, () => {
-	console.log("listening on port " + port);
+	console.log("Application listenting on port " + port);
 });
