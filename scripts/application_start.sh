@@ -3,7 +3,7 @@
 sudo chmod -R 777 /home/ec2-user/topictalk-app
 
 # Move to application directory
-cd /home/ec2-user/express-app
+cd /home/ec2-user/topictalk-app
 
 # Add Node and NPM to the path
 export NVM_DIRn="$HOME/.nvm"
