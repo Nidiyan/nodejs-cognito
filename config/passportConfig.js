@@ -7,7 +7,7 @@ passport.serializeUser((user, done) => {
 );
 
 passport.deserializeUser((user, done) => {
-        done(err, user);
+        done(null, user);
     }
 );
 
@@ -18,6 +18,6 @@ passport.use(new GoogleStrategy({
     },
     // Modify this to get AWS Creds
     function (accessToken, refreshToken, profile, done) {
-        return done(err, user);
+        return done(null, profile.id);
     })
 );

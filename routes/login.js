@@ -4,7 +4,7 @@ var router = express.Router();
 // GET /login
 // Returns the login page
 router.get("/", (req, res) => {
-    res.render("Page Under Construction");
+    res.send("Page Under Construction");
 });
 
 // POST /login
