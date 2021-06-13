@@ -4,13 +4,13 @@ var router = express.Router();
 // GET /login
 // Returns the login page
 router.get("/", (req, res) => {
-    res.render("Page Under Construction");
+    res.render("login");
 });
 
 // POST /login
 // logs the user in
 router.post("/", (req, res) => {
-    res.json({status: "Endpoint not finished"});
+    res.json({status: "Page Under Construction"});
 });
 
 module.exports = router;
