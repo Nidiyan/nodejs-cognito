@@ -21,6 +21,7 @@ app.use(cookieSession({
 
 app.use(passport.initialize());
 app.use(passport.session());
+require("./config/passportConfig");
 
 app.use(cors());
 app.set('view engine', 'ejs');
