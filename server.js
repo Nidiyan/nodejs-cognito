@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const config = require("./config/keys");
 const ejs = require("ejs");
 const cors = require("cors");
+const passport = require("passport");
 
 
 const app = express();
