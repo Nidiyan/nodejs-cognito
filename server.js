@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const config = require("./config/keys");
 const ejs = require("ejs");
 const cors = require("cors");
+const passport = require("passport");
+const cookieSession = require("cookie-session");
 
 
 const app = express();
@@ -10,6 +12,17 @@ const app = express();
 // Dependencies
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+app.use(cookieSession({
+		name: "topicTalk",
+		keys: ['key1', 'key2']
+	})
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+require("./config/passportConfig");
+
 app.use(cors());
 app.set('view engine', 'ejs');
 
