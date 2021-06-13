@@ -4,22 +4,28 @@ const config = require("../config/keys");
 const passport = require("passport");
 var router = express.Router();
 
-router.get('/', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/login', passport.authenticate('google', 
+    { 
+        scope: ['profile', 'email'],
+        prompt: "select_account"
+    })
+);
 
 router.get('/callback', 
   passport.authenticate('google', { failureRedirect: '/google/auth/failure' }),
   (req, res) => {
     // Successful authentication, redirect home.
+    req.session.user = req.user;
     res.redirect('/google/auth/success');
   }
 );
 
-router.get("/failure", (req, res) => {
-    res.send("You have failed to login via google");
+router.get("/success", config.isLoggedIn, (req, res) => {
+    res.send(`You have successfully logged in ${req.user.email}`);
 });
 
-router.get("/success", config.isLoggedIn, (req, res) => {
-    res.send("You have successfully logged in");
+router.get("/failure", (req, res) => {
+    res.send("You have failed to login via google");
 });
 
 module.exports = router;

@@ -18,6 +18,6 @@ passport.use(new GoogleStrategy({
     },
     // Modify this to get AWS Creds
     function (accessToken, refreshToken, profile, done) {
-        return done(null, profile.id);
+        return done(null, profile);
     })
 );

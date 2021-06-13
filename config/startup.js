@@ -13,4 +13,14 @@ router.use("/login", login);
 router.use("/register", register);
 router.use("/google/auth", google);
 
+router.get('/logout', (req, res) => {
+    if (req.session) {
+        req.session = null;
+        req.logout();
+    }
+       
+    res.redirect("/");
+    }
+);
+
 module.exports = router;
