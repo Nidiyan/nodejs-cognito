@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.use(cookieSession({
 		name: "topicTalk",
-		keys: ['key1', 'key2']
+		keys: ['secret1', 'secret2']
 	})
 );
 

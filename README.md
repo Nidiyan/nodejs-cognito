@@ -23,6 +23,11 @@ module.exports = {
         UserPoolId: "...",
         ClientId: "...",
     },
+    googleCredentials: {
+        clientID: "...",
+        clientSecret: "...",
+        callbackURL: "http://localhost:8000/google/auth/callback"
+    },
     isLoggedIn: (req, res, next) => {
         if (req.user) {
             next();
