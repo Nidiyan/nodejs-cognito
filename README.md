@@ -1,12 +1,12 @@
-# Topic Talk
+# Node.js, AWS Cognito, and more...
 
 Using AWS Cognito for User Sign-up/Sign-in
 
-##### Setup
+#### Setup
 1. AWS Cognito User Pool
-2. Setup [a link](https://developers.google.com/identity/protocols/oauth2) Google OAuth Credentials
+2. Setup [ Google OAuth Credentials ](https://developers.google.com/identity/protocols/oauth2)
 
-##### Packages
+#### Packages
  - Express.js
  - CORS
  - passport
@@ -16,7 +16,7 @@ Using AWS Cognito for User Sign-up/Sign-in
  - amazon-cognito-identity-js
 
 
-##### keys.js
+#### keys.js
 ```
 module.exports = {
     poolData: {
