@@ -20,8 +20,8 @@ router.get('/callback',
   }
 );
 
-router.get("/success", config.isLoggedIn, (req, res) => {
-    res.send(`You have successfully logged in ${req.user.email}`);
+router.get("/success", (req, res) => { 
+    res.send(`You have successfully logged in ${req.user.name.givenName}`);
 });
 
 router.get("/failure", (req, res) => {
